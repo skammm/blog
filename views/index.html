@@ -1,0 +1,55 @@
+{{extend './_layout/home.html'}}
+
+{{block 'title'}}{{'首页'}}{{/block}}
+{{block 'head'}}
+  <style>
+    .content img{
+      float: left;
+      margin-right: 10px;
+    }
+    .section{
+      width: 80%;
+      margin: auto;
+    }
+  </style>
+{{/block}}
+{{block 'body'}}
+  <div class="section">
+    <div class="list-group">
+      <a href="#" class="list-group-item active">
+        <div class="content">
+          <img src="/public/img/x34.jpg" alt="" width="50" height="50">
+          <div>
+            <h4 class="list-group-item-heading">item heading</h4>
+          <p class="list-group-item-text">jack回复了问题.2个关注.1个回复.177次浏览.2020-1-1</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  
+    <div class="list-group">
+      <a href="#" class="list-group-item active">
+        <div class="content">
+          <img src="/public/img/x34.jpg" alt="" width="50" height="50">
+          <div>
+            <h4 class="list-group-item-heading">item heading</h4>
+          <p class="list-group-item-text">jack回复了问题.2个关注.1个回复.177次浏览.2020-1-1</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  
+    <div class="list-group">
+      <a href="#" class="list-group-item active">
+        <div class="content">
+          <img src="/public/img/x34.jpg" alt="" width="50" height="50">
+          <div>
+            <h4 class="list-group-item-heading">item heading</h4>
+          <p class="list-group-item-text">jack回复了问题.2个关注.1个回复.177次浏览.2020-1-1</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+{{/block}}
