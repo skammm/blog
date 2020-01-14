@@ -1,5 +1,5 @@
 # blog
-use nodejs create blog
+use nodejs create blog ```用node写的js相当于一个服务器```
 ## node.js是什么
 - node不是框架，不是语言，是js的运行环境，简单来说node可以解析执行js代码
 - node中的js
@@ -65,6 +65,41 @@ use nodejs create blog
    - 加载文件模块并执行里边的代码
    - 拿到被加载文件模块导出的接口对象```在每个模块中都提供一个对象：exports，默认是一个空对象
 
+### 3.3 端口号
+ - ip地址用来定位计算机，端口号用来定位具体的应用程序
+
+ - 普通用户访问应用程序时，浏览器会自动申请一个端口号占用
+
+
+ ## 4.Node中的模块系统
+
+ ### 4.1 什么是模块？
+  - 文件作用域
+  - 通信规则
+     - 加载require
+     - 导出
+ ### 4.2 CommonJS 模块规范
+  在node中的js还有一个很重要的概念，模块系统
+  - 模块作用域
+  - 使用require来加载对象
+  - 使用exports接口对象来导出模块中的成员 
+    ```在node中，每个模块内部都有一个module对象，该model对象中有一个exports成员，默认每个模块最后都有一句：return module.exports```
+ ### 4.3 require方法的加载规则
+   - 优先从缓存中加载，如果缓存中已经加载过该文件，那么不会重新执行该文件，只会获取他的接口对象
+   - 判断模块标识符
+      - 核心模块
+      - 第三方模块
+      - 自己写的模块
+ ### 4.4 npm命令行工具
+   - npm install --version
+   - npm install --global npm ```升级npm```
+   - npm init -y ```跳过向导，快速生成```
+   - npm install
+   - npm install 包名
+   - npm uninstall 包名
+   - npm help ```查看使用帮助```
+
+   
 
 
  
