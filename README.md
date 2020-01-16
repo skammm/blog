@@ -35,7 +35,7 @@ use nodejs create blog ```用node写的js相当于一个服务器```
 
 ***   
 
-## 起步
+## 2.起步
 ### 2.1 node的基本使用
 - node + 文件名 ```解析执行js文件夹```
 - 引入核心文件读写文件
@@ -99,7 +99,21 @@ use nodejs create blog ```用node写的js相当于一个服务器```
    - npm uninstall 包名
    - npm help ```查看使用帮助```
 
-   
+## 5.Express
+ 
+ 原生的http在某些方面不足以应对我们的开发需求，所以我们就使用框架来提高我们的开发效率，框架的目的就是提高效率，让我们的代码更加统一。
+
+ ### 5.1 修改完代码自动重启
+  ```npm i --global nodemon```
+ ### 5.2 基本路由
+  路由器
+   - 请求方法
+   - 请求路径
+   - 处理函数
+   ```app.get('/',function(req,res){})```
+### 5.3 静态资源
+  用于开放某些静态资源，浏览器解析到外链时能够自动获取到该资源
+  ```app.use('/node_modules',express.static('./node_modules/'))```
 
 
  
