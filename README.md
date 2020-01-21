@@ -116,6 +116,23 @@ use nodejs create blog ```用node写的js相当于一个服务器```
   ```app.use('/node_modules',express.static('./node_modules/'))```
 
 
+## 6.mongodb
+  ### 6.1 启动和链接数据库
+   - 启动 mongod ```在第一次执行该命令时，要手动在改盘符下创建data/db```
+   - 连接 mongo
+   - 退出  exit
+
+   ### 6.2在node中如何操作mongodb
+     #### 6.2.1 使用mongoose操作数据库
+     使用第三方包mongoose来来操作mongodb数据库，mongoose是基于mongodb官方的mongodb包再一次做了封装。
+
+     #### 6.2.2 mongodb数据库的基本概念
+
+      - 可以有多个数据库
+      - 一个数据库可以有多个集合（相当于数组）
+      - 一个集合可以有多个文档（表记录）
+      - 文档相对于别的数据库比较灵活，没有任何限制
+      - mongodb比较灵活，不需要像mysql一样先创建数据库、表、设计表结构
  
 
 
