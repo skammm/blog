@@ -59,7 +59,15 @@
         data:formData,
         dataType:'json',
         success:function(data){
-          console.log(data)
+          var err_code = data.err_code;
+          if(err_code === 0){
+            // alert('注册成功')
+            window.location.href = '/';
+          } else if(err_code === 1){
+            alert('昵称和邮箱已注册')
+          }else{
+            alert('服务端出错')
+          }
         }
       })
     })
