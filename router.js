@@ -8,13 +8,40 @@ var md5 = require('blueimp-md5');
 var User = require('./models/user');
 
 router.get('/',function(req,res){
-  res.render('index.html');
+  res.render('index.html',{
+    user:req.session.user
+  });
 })
 
 router.get('/login',function(req,res){
   res.render('login.html')
 })
+router.post('/login',function(req,res){
+  var body = req.body;
 
+  User.findOne({
+    email:body.email,
+    password:md5(md5(body.password))
+  },function(err,user){
+    if(err){
+      return res.status(500).json({
+        err_code:500,
+        message:'server error'
+      })
+    }
+    if(!user){
+      return res.status(200).json({
+        err_code:1,
+        message:'邮箱或密码错误'
+      })
+    }
+    req.session.user = user;
+    res.status(200).json({
+      err_code:0,
+      message:'Ok'
+    })
+  })
+})
 router.get('/register',function(req,res){
   res.render('register.html')
 })
@@ -43,6 +70,7 @@ router.post('/register',function(req,res){
           message:'Server error'
         })
       }
+      
       res.status(200).json({
         err_code:0,
         message:'Ok'
@@ -51,6 +79,11 @@ router.post('/register',function(req,res){
 
     
   })
+})
+
+router.get('/logout',function(req,res){
+  req.session.user = null;
+  res.redirect('/')
 })
 
 
