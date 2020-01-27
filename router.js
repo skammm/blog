@@ -86,5 +86,11 @@ router.get('/logout',function(req,res){
   res.redirect('/')
 })
 
+router.get('/profile',function(req,res){
+  console.log(req.session.user)
+  res.render('setting/profile.html',{
+    user:req.session.user
+  })
+})
 
 module.exports = router;

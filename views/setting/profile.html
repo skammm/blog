@@ -1,0 +1,35 @@
+{{extend '../_layout/home.html'}}
+
+{{block 'body'}}
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="{{user&&user.email}}" disabled >
+  </div>
+  <div class="form-group">
+    <label for="nickname">Nickname</label>
+    <input type="text" class="form-control" id="nickname" placeholder="Nickname" name="nickname" value="{{user&&user.nickname}}">
+  </div>
+  <div class="form-group">
+    <label for="create_Date">Create_Date</label>
+    <input type="text" class="form-control" id="create_Date" name="create_Date" value="{{user&&user.create_Date}}" disabled>
+  </div>
+  <div class="form-group">
+    <img alt="Brand" src="{{user.avator}}" width="50" height="50">
+    <input type="file" id="exampleInputFile">
+  </div>
+  <label class="checkbox-inline">
+    <input type="checkbox" id="boy" value="1" name="gender"> 男
+  </label>
+  <label class="checkbox-inline">
+    <input type="checkbox" id="gril" value="-1" name="gender"> 女
+  </label>
+  <div class="form-group">
+    <label for="birthday">Birthday</label>
+    <input type="text" class="form-control" id="birthday" name="birthday" value="{{user&&user.birthday}}">
+  </div>
+  
+  
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+{{/block}}
